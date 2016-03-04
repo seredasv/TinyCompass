@@ -1,4 +1,6 @@
 package com.ssv.tinycompass.views;
 
-public class MainApplication {
+import android.app.Application;
+
+public class MainApplication extends Application {
 }
