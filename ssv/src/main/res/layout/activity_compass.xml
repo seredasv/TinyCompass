@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_distance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginLeft="@dimen/dim_8dp"
+        android:layout_marginRight="@dimen/dim_8dp"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:gravity="center_horizontal"
+        android:paddingBottom="@dimen/dim_8dp"
+        android:paddingTop="@dimen/dim_8dp" />
+
+    <LinearLayout
+        android:id="@+id/ll_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginLeft="@dimen/dim_8dp"
+        android:layout_marginRight="@dimen/dim_8dp"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_latitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/latitude" />
+
+        <Button
+            android:id="@+id/btn_longitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/longitude" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_buttons"
+        android:layout_below="@+id/tv_distance">
+
+        <ImageView
+            android:id="@+id/main_image_dial"
+            android:layout_width="@dimen/dim_320dp"
+            android:layout_height="@dimen/dim_320dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/compass_rose" />
+
+        <ImageView
+            android:id="@+id/main_image_hands"
+            android:layout_width="@dimen/dim_20dp"
+            android:layout_height="@dimen/dim_240dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/compass_arrow" />
+
+        <com.ssv.tinycompass.utils.CompassCustomView
+            android:id="@+id/compass_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
