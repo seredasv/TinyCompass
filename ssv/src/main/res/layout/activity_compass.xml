@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -15,36 +16,10 @@
         android:paddingBottom="@dimen/dim_8dp"
         android:paddingTop="@dimen/dim_8dp" />
 
-    <LinearLayout
-        android:id="@+id/ll_buttons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="@dimen/dim_8dp"
-        android:layout_marginLeft="@dimen/dim_8dp"
-        android:layout_marginRight="@dimen/dim_8dp"
-        android:layout_marginStart="@dimen/dim_8dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_latitude"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/latitude" />
-
-        <Button
-            android:id="@+id/btn_longitude"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/longitude" />
-    </LinearLayout>
-
     <RelativeLayout
+        android:id="@+id/rl_compass"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/ll_buttons"
         android:layout_below="@+id/tv_distance">
 
         <ImageView
@@ -68,5 +43,39 @@
             android:layout_height="match_parent" />
     </RelativeLayout>
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ad_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id" />
+
+    <LinearLayout
+        android:id="@+id/ll_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ad_view"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginLeft="@dimen/dim_8dp"
+        android:layout_marginRight="@dimen/dim_8dp"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_latitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/latitude" />
+
+        <Button
+            android:id="@+id/btn_longitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/longitude" />
+    </LinearLayout>
 
 </RelativeLayout>

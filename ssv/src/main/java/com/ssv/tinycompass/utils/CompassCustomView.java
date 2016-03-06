@@ -13,7 +13,7 @@ public class CompassCustomView extends ImageView {
     private static final int DEGREES_180 = 180;
     private static final int ONE = 1;
     private static final int TWO = 2;
-    private static final float BIG_RADIUS_COEFFICIENT = 0.645f;
+    private static final float BIG_RADIUS_COEFFICIENT = 0.585f;
     private static final float RED_DOT_RADIUS_COEFFICIENT = 0.02f;
     //endregion
 

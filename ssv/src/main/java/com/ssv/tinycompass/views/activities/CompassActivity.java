@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.ssv.tinycompass.R;
 import com.ssv.tinycompass.presenters.CompassPresenter;
 import com.ssv.tinycompass.presenters.CompassPresenterImpl;
@@ -47,6 +49,8 @@ public class CompassActivity extends AppCompatActivity implements View.OnClickLi
 
         registerLocationListener(LocationManager.GPS_PROVIDER, 0, 0, this);
         registerLocationListener(LocationManager.NETWORK_PROVIDER, 0, 0, this);
+
+        addAdMob();
     }
 
     @Override
@@ -97,6 +101,12 @@ public class CompassActivity extends AppCompatActivity implements View.OnClickLi
         } catch (SecurityException e) {
             Toast.makeText(this, R.string.gps_security_exception, Toast.LENGTH_LONG).show();
         }
+    }
+
+    private void addAdMob() {
+        AdView mAdView = (AdView) findViewById(R.id.ad_view);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
     //endregion
 
